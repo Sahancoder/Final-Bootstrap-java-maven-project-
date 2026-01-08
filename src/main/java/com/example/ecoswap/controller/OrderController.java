@@ -1,10 +1,12 @@
 package com.example.ecoswap.controller;
 
+
 import com.example.ecoswap.model.Order;
 import com.example.ecoswap.model.User;
 import com.example.ecoswap.model.enums.OrderStatus;
 import com.example.ecoswap.model.enums.Role;
 import com.example.ecoswap.security.CustomUserDetails;
+import com.example.ecoswap.services.EmailService;
 import com.example.ecoswap.services.NotificationService;
 import com.example.ecoswap.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,10 @@ import java.util.Map;
 @Controller
 @RequestMapping("/dashboard/orders")
 public class OrderController {
+
+    @Autowired
+    private EmailService emailService;
+
 
     @Autowired
     private OrderService orderService;
